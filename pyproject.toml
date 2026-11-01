@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prayer-times"
+version = "0.1.0"
+description = "Show Islamic prayer times for any city (aladhan.com API)"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "ywsfalhajby08-star" }]
+requires-python = ">=3.9"
+dependencies = ["tzdata; sys_platform == 'win32'"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Environment :: Console",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+prayer-times = "prayer_times.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ywsfalhajby08-star/prayer-times"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
